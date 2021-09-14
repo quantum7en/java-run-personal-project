@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8349f5b2-f1b1-4133-b9a0-6c460f2d5913" name="Changes" comment="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1">
+      <change afterPath="$PROJECT_DIR$/app/src/dao/AbstractController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hibernate/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hibernate/SessionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/program/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/InstaAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/InstaAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/ProductItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/ProductItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/app/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/app/program/Program.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/src/program/Program.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1xo5mHpZCMpbq3TSidK7kC5i4BT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Program" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="program.Program" />
+      <module name="app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8349f5b2-f1b1-4133-b9a0-6c460f2d5913" name="Changes" comment="" />
+      <created>1631008759074</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631008759074</updated>
+      <workItem from="1631008769270" duration="1410000" />
+      <workItem from="1631012385904" duration="621000" />
+      <workItem from="1631015050577" duration="2486000" />
+      <workItem from="1631040370957" duration="283000" />
+      <workItem from="1631371911337" duration="815000" />
+      <workItem from="1631374743724" duration="668000" />
+      <workItem from="1631375976957" duration="408000" />
+      <workItem from="1631376389621" duration="35000" />
+      <workItem from="1631376502728" duration="54000" />
+      <workItem from="1631376601702" duration="1183000" />
+      <workItem from="1631380243878" duration="153000" />
+      <workItem from="1631456373406" duration="537000" />
+      <workItem from="1631464099039" duration="338000" />
+      <workItem from="1631468214253" duration="25000" />
+      <workItem from="1631615196060" duration="741000" />
+      <workItem from="1631615944020" duration="273000" />
+      <workItem from="1631616302563" duration="546000" />
+      <workItem from="1631616968137" duration="34000" />
+      <workItem from="1631617005532" duration="976000" />
+      <workItem from="1631618163612" duration="210000" />
+      <workItem from="1631625708879" duration="729000" />
+      <workItem from="1631629635204" duration="2818000" />
+      <workItem from="1631634641597" duration="2264000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1" />
+  </component>
+</project>

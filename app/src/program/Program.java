@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Program {
-    static HttpServer appServer; //TODO remove
+    static Server appServer; //TODO remove
     static Level level;
 
     public static final Logger logger = Logger.getLogger("appLogger");

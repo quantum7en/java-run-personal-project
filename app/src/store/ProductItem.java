@@ -1,6 +1,8 @@
 package store;
 
 import java.math.BigDecimal;
+import java.util.UUID;
+
 
 public class ProductItem {
     private UUID id;
