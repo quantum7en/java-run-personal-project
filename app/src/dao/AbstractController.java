@@ -12,7 +12,6 @@ public abstract class AbstractController <E, K> {
 //        connection = connectionPool.getConnection();
 //    }
 
-
     public abstract List<E> getAll();
     public abstract E getEntityById(K id);
     public abstract E update(E entity);
