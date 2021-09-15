@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8349f5b2-f1b1-4133-b9a0-6c460f2d5913" name="Changes" comment="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1">
-      <change afterPath="$PROJECT_DIR$/app/src/dao/AbstractController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/hibernate/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/hibernate/SessionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+    <list default="true" id="8349f5b2-f1b1-4133-b9a0-6c460f2d5913" name="Changes" comment="gitignore added again #1">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/InstaAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/InstaAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/ProductItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/ProductItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/app/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/app/program/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/app/store/InstaAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/app/store/InstaAccount.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +44,15 @@
     <setting file="file://$PROJECT_DIR$/app/src/program/Program.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xo5mHpZCMpbq3TSidK7kC5i4BT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -111,8 +110,17 @@
       <workItem from="1631618163612" duration="210000" />
       <workItem from="1631625708879" duration="729000" />
       <workItem from="1631629635204" duration="2818000" />
-      <workItem from="1631634641597" duration="2264000" />
+      <workItem from="1631634641597" duration="2497000" />
+      <workItem from="1631696576503" duration="7188000" />
     </task>
+    <task id="LOCAL-00001" summary="to save before closing &amp; fixing IDE problems, BL &amp; ProductItemRepository classes added, draft version #1">
+      <created>1631706027736</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631706027736</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +139,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="AbstractController, HibernateUtil &amp; SessionFactory added, draft version #1" />
+    <MESSAGE value="to save before closing &amp; fixing IDE problems, BL &amp; ProductItemRepository classes added, draft version #1" />
+    <MESSAGE value="gitignore added again #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore added again #1" />
   </component>
 </project>

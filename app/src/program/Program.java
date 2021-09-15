@@ -27,6 +27,6 @@ public class Program {
         }
 
         level = Level.INFO;
-        logger.log(level, "Server started succesfully");
+        logger.log(level, "Server started succesfully!!!!!!!");
     }
 }
