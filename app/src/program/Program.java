@@ -1,6 +1,6 @@
 package program;
 
-import com.sun.net.httpserver.HttpServer;
+import logic.BusinessLogic;
 import server.Server;
 
 import java.io.IOException;
@@ -8,25 +8,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Program {
-    static Server appServer; //TODO remove
-    static Level level;
 
-    public static final Logger logger = Logger.getLogger("appLogger");
+    private static final Logger logger = Logger.getLogger(Program.class.getCanonicalName());
 
     public static void main(String[] args) {
 
-        //TODO create package & class business logic
-        level = Level.INFO;
-
         try {
-            appServer = Server.getHttpServerInstance();
-            appServer.start();
-        }
-        catch (IOException E){
-            logger.log(level, "Binding failed");
-        }
+            Server.getHttpServerInstance().start();
+            BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
 
-        level = Level.INFO;
-        logger.log(level, "Server started succesfully!!!!!!!");
+        } catch (IOException ioE) { //todo remove, to change completely
+            logger.log(Level.WARNING, "BINDING WARNING: Binding failed");
+            // todo server stop
+        } catch (Exception ignored) {
+            logger.log(Level.WARNING, "BUSINESS LOGIC WARNING");
+        }
+        logger.log(Level.INFO, "Server started succesfully!!! <3 ");
     }
 }

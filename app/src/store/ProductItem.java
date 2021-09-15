@@ -11,6 +11,18 @@ public class ProductItem {
     private BigDecimal price;
     private int size;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
