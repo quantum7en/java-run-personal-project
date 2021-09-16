@@ -16,10 +16,6 @@ public class Program {
         try {
             Server.getHttpServerInstance().start();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
-
-        } catch (IOException ioE) { //todo remove, to change completely
-            logger.log(Level.WARNING, "BINDING WARNING: Binding failed");
-            // todo server stop
         } catch (Exception ignored) {
             logger.log(Level.WARNING, "BUSINESS LOGIC WARNING");
         }

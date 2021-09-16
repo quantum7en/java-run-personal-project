@@ -24,7 +24,7 @@ public class Server extends HttpServer {
     private static Server httpServerInstance;
     private Server(){}
 
-    public static Server getHttpServerInstance() throws IOException{
+    public static Server getHttpServerInstance() {
         if(httpServerInstance == null){
             httpServerInstance = new Server() {
             };
@@ -39,7 +39,7 @@ public class Server extends HttpServer {
         double x = Math.random(); //for debug
 
         logger.log(Level.INFO, "binding");
-        //todo figure out how to implement bind, поправить: при эксепшене здесь все равно запускается Бизнес логика и сообщение
+        //todo figure out how to implement bind, поправить: при эксепшене здесь, все равно запускается Бизнес логика и сообщение
         if(x > 0.9) //for debug
             throw new IOException();
     }
