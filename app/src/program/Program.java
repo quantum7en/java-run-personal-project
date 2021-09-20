@@ -2,8 +2,6 @@ package program;
 
 import logic.BusinessLogic;
 import server.Server;
-
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

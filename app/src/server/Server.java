@@ -71,7 +71,6 @@ public class Server extends HttpServer {
                             logger.log(Level.INFO, input.readLine());
                         }
 
-                        // отправляем ответ
                         output.println("HTTP/1.1 200 OK");
                         output.println("Content-Type: text/html; charset=utf-8");
                         output.println();

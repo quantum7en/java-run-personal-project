@@ -19,6 +19,8 @@ public class BusinessLogic {
 
     public void startBusinessLogic(){
         // todo где лучше создавать юзера? , впилить сюда try catch
+
+
         logger.log(Level.INFO, "Business logic started");
     }
 }
