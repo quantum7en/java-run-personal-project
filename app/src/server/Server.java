@@ -24,28 +24,7 @@ public class Server {
     private static HttpServer httpServerInstance;
     private Server(){}
 
-//    public static HttpServer getHttpServerInstance() {
-//        if(httpServerInstance == null){
-//            httpServerInstance = new HttpServer() {
-//            };
-//            logger.info("One and only server created.");
-//        }
-//        return httpServerInstance;
-//    }
-
-
-//    @Override
-//    public void bind(InetSocketAddress inetSocketAddress, int i) throws IOException {
-//        double x = Math.random(); //for debug
-//
-//        logger.log(Level.INFO, "binding");
-//        //todo figure out how to implement bind, поправить: при эксепшене здесь, все равно запускается Бизнес логика и сообщение
-//        if(x > 0.9) //for debug
-//            throw new IOException();
-//    }
-
     public static void start() {
-        // httpServerInstance = Server.getHttpServerInstance();
         // httpServerInstance.bind(new InetSocketAddress(8080), 0); //todo remove this
 
         try (ServerSocket serverSocket = new ServerSocket(8080)) {
@@ -74,10 +53,6 @@ public class Server {
                     output.println();
                     output.println("<p>Masya!</p>");
                     output.flush();
-
-//                    output.close();
-//                    socket.close();
-//                    serverSocket.close();
 
 
                     // по окончанию выполнения блока try-with-resources потоки,
