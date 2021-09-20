@@ -12,7 +12,7 @@ public class Program {
     public static void main(String[] args) {
 
         try {
-            Server.getHttpServerInstance().start();
+            Server.start();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (Exception ignored) {
             logger.log(Level.WARNING, "BUSINESS LOGIC WARNING");
