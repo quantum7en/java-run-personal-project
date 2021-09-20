@@ -13,9 +13,10 @@ public class Program {
 
         try {
             Server.start();
+            logger.log(Level.INFO, "after server started");
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (Exception ignored) {
-            logger.log(Level.WARNING, "BUSINESS LOGIC WARNING");
+            logger.log(Level.WARNING, "WARNING");
         }
         logger.log(Level.INFO, "Server started succesfully!!! <3 ");
     }
