@@ -25,7 +25,7 @@ public class Server {
             //httpServerInstance.createContext("mmmmmasya", serverHandler);
             //context.setHandler(serverHandler);
             httpServerInstance.start();
-            logger.log(Level.INFO, "Server started in method start");
+            logger.log(Level.INFO, "Server started");
         } catch (IOException ex){
             logger.log(Level.WARNING, "Server creation caught IOException");
         }
