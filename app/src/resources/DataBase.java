@@ -1,13 +1,18 @@
 package resources;
 
+import logic.BusinessLogic;
 import store.InstaAccount;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //todo jdbc
 public class DataBase {
+    private static DataBase dataBaseInstance;
+    private static final Logger logger = Logger.getLogger(BusinessLogic.class.getCanonicalName());
     private final List<InstaAccount> instaAccountArrayList = new ArrayList<>();
 
     private final InstaAccount [] shops = new InstaAccount[]{new InstaAccount("StyleNanda shop"),
@@ -22,6 +27,14 @@ public class DataBase {
     }
 
     public DataBase(){
+        logger.log(Level.INFO, "filling Database...");
         fillInstaAccountArrayList();
+    }
+
+    public static DataBase getDataBaseInstance(){
+        if(dataBaseInstance == null){
+            dataBaseInstance = new DataBase() {};
+        }
+        return dataBaseInstance;
     }
 }

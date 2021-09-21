@@ -20,7 +20,7 @@ public class Server {
     public static void start() {
 
         try {
-            httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0);
+            httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0); // 0 - для обратной регистрации, если 0 - не ставим в очередь никаких запросов
             HttpContext context = httpServerInstance.createContext("/");
             //httpServerInstance.createContext("mmmmmasya", serverHandler);
             //context.setHandler(serverHandler);
@@ -39,8 +39,6 @@ public class Server {
 //                Socket socket = serverSocket.accept();
 //                logger.log(Level.INFO, "Client connected!");
 //
-//                // для подключившегося клиента открываем потоки
-//                // чтения и записи
 //                try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 //                     PrintWriter output = new PrintWriter(socket.getOutputStream())) {
 //

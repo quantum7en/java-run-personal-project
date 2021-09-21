@@ -1,6 +1,7 @@
 package program;
 
 import logic.BusinessLogic;
+import resources.DataBase;
 import server.Server;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +15,7 @@ public class Program {
         try {
             Server.start();
             logger.log(Level.INFO, "after server started");
+            DataBase.getDataBaseInstance();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (Exception ignored) {
             logger.log(Level.WARNING, "WARNING");
