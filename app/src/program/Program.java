@@ -15,7 +15,7 @@ public class Program {
         try {
             Server.start();
             logger.log(Level.INFO, "after server started");
-            DataBase.getDataBaseInstance();
+            DataBase dataBase = DataBase.getDataBaseInstance();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (Exception ignored) {
             logger.log(Level.WARNING, "WARNING");
