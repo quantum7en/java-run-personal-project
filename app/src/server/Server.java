@@ -3,9 +3,10 @@ package server;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpServer;
 
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,8 +22,12 @@ public class Server {
 
         try {
             httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0); // 0 - для обратной регистрации, если 0 - не ставим в очередь никаких запросов
-            HttpContext context = httpServerInstance.createContext("/");
-            //httpServerInstance.createContext("mmmmmasya", serverHandler);
+            HttpContext context = httpServerInstance.createContext("/m", new ServerHandler());
+
+            ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
+            httpServerInstance.setExecutor(threadPoolExecutor);
+
+            //httpServerInstance.createContext("masya", serverHandler);
             //context.setHandler(serverHandler);
             httpServerInstance.start();
             logger.log(Level.INFO, "Server started");

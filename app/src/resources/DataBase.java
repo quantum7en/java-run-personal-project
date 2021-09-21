@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-//todo jdbc
 public class DataBase {
     private static DataBase dataBaseInstance;
     private static final Logger logger = Logger.getLogger(BusinessLogic.class.getCanonicalName());
@@ -36,5 +35,10 @@ public class DataBase {
             dataBaseInstance = new DataBase() {};
         }
         return dataBaseInstance;
+    }
+
+    public InstaAccount searchByInstaAccountName(){
+        InstaAccount instaAccount = null;
+        return instaAccount;
     }
 }

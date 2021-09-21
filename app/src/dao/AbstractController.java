@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.List;
 
 public abstract class AbstractController <E, K> {
+    //todo replace this class with class InstaAccountRepositoryJdbcImplement?
     private Connection connection;
 //    private ConnectionPool connectionPool;
 //

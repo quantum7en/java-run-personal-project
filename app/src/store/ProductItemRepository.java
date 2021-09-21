@@ -21,7 +21,9 @@ public class ProductItemRepository {
     public ProductItemRepository(ArrayList<ProductItem> productItems) {
     }
 
-
+    public void addProductItemInRepo(ProductItem productItem){
+        listOfProductItems.add(productItem);
+    }
 
 
 }

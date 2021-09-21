@@ -3,6 +3,8 @@ package user;
 import java.io.*;
 import java.net.Socket;
 
+//todo if we will have more than 1 user, put them in List, identify them by id or email
+
 public class User {
     private Long id;
     private String email;

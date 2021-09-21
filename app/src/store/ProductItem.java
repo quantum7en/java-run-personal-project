@@ -11,6 +11,12 @@ public class ProductItem {
     private BigDecimal price;
     private int size;
 
+    public ProductItem(String title, BigDecimal price){
+        this.id = UUID.randomUUID();
+        this.title = title;
+        this.price = price;
+    }
+
     public UUID getId() {
         return id;
     }

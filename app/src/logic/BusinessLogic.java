@@ -24,7 +24,7 @@ public class BusinessLogic {
 
     public void startBusinessLogic(){
 
-        //todo нужно запускать в отдельном мейне
+        //todo нужно запускать в отдельном мейне, если много юзеров и создавать каждого?
 
 //        try ( Socket socket = new Socket("127.0.0.1", 8000);
 //             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
