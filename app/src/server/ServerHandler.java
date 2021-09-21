@@ -1,5 +1,7 @@
 package server;
 
+import com.ibm.jvm.dtfjview.Session;
+import com.ibm.jvm.dtfjview.SessionProperties;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -15,9 +17,14 @@ public class ServerHandler implements HttpHandler {
      *                 client and used to send the response
      * @throws NullPointerException if exchange is <code>null</code>
      */
+
+    private Session serverSession;
+
+    public ServerHandler(){}
+
+
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-
 
         throw new IOException();
     }

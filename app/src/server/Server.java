@@ -15,6 +15,11 @@ public class Server {
 
     private static final Logger logger = Logger.getLogger(Server.class.getCanonicalName());
     private static HttpServer httpServerInstance;
+
+    private static final String defaultPage = "/";
+    private static final String instaAccountsPage = "accounts/";
+    private static final String accountSearchPage = "accounts/search?name=awesome_shoes";
+
     private ServerHandler serverHandler;
     private Server(){}
 
@@ -22,12 +27,15 @@ public class Server {
 
         try {
             httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0); // 0 - для обратной регистрации, если 0 - не ставим в очередь никаких запросов
-            HttpContext context = httpServerInstance.createContext("/m", new ServerHandler());
+            ServerHandler serverHandler = new ServerHandler();
 
             ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
             httpServerInstance.setExecutor(threadPoolExecutor);
 
-            //httpServerInstance.createContext("masya", serverHandler);
+            HttpContext defaultContext = httpServerInstance.createContext(defaultPage, serverHandler);
+            HttpContext instaAccountsContext = httpServerInstance.createContext(instaAccountsPage, serverHandler);
+            HttpContext accountSearchContext = httpServerInstance.createContext(accountSearchPage, serverHandler);
+
             //context.setHandler(serverHandler);
             httpServerInstance.start();
             logger.log(Level.INFO, "Server started");
