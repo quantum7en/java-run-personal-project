@@ -14,71 +14,35 @@ import java.util.logging.Logger;
 public class Server {
 
     private static final Logger logger = Logger.getLogger(Server.class.getCanonicalName());
-    private static HttpServer httpServerInstance;
 
     private static final String defaultPage = "/";
-    private static final String instaAccountsPage = "accounts/";
-    private static final String accountSearchPage = "accounts/search?name=awesome_shoes";
+    private static final String instaAccountsPage = "/accounts";
+    private static final String accountSearchPage = "/accounts/search?name=awesome_shoes";
 
-    private ServerHandler serverHandler;
     private Server(){}
 
-    public static void start() {
+    public static void start() throws IOException {
 
         try {
-            httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0); // 0 - для обратной регистрации, если 0 - не ставим в очередь никаких запросов
+            HttpServer httpServerInstance = HttpServer.create(new InetSocketAddress(8080), 0); // 0 - для обратной регистрации, если 0 - не ставим в очередь никаких запросов
             ServerHandler serverHandler = new ServerHandler();
+            logger.log(Level.INFO, "ServerHandler created");
 
             ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
             httpServerInstance.setExecutor(threadPoolExecutor);
+            logger.log(Level.INFO, "Executor created");
 
             HttpContext defaultContext = httpServerInstance.createContext(defaultPage, serverHandler);
-            HttpContext instaAccountsContext = httpServerInstance.createContext(instaAccountsPage, serverHandler);
-            HttpContext accountSearchContext = httpServerInstance.createContext(accountSearchPage, serverHandler);
+            httpServerInstance.createContext(instaAccountsPage, serverHandler);
+            httpServerInstance.createContext(accountSearchPage, serverHandler);
 
-            //context.setHandler(serverHandler);
             httpServerInstance.start();
-            logger.log(Level.INFO, "Server started");
         } catch (IOException ex){
             logger.log(Level.WARNING, "Server creation caught IOException");
+            throw new IOException();
         }
 
         logger.log(Level.INFO, "Server started");
-
-//        try (ServerSocket serverSocket = new ServerSocket(8080)) {
-//            logger.log(Level.INFO, "Server started!");
-//
-//            while (true) {
-//                Socket socket = serverSocket.accept();
-//                logger.log(Level.INFO, "Client connected!");
-//
-//                try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
-//                     PrintWriter output = new PrintWriter(socket.getOutputStream())) {
-//
-//                    // ждем первой строки запроса
-//                    while (!input.ready()) ;
-//
-//                    // считываем и печатаем все что было отправлено клиентом
-//                    logger.log(Level.INFO, "\n");
-//                    while (input.ready()) {
-//                        logger.log(Level.INFO, input.readLine());
-//                    }
-//
-//                    output.println("HTTP/1.1 200 OK");
-//                    output.println("Content-Type: text/html; charset=utf-8");
-//                    output.println();
-//                    output.println("<p>Masya!</p>");
-//                    output.flush();
-//
-//
-//                    // по окончанию выполнения блока try-with-resources потоки,
-//                    // а вместе с ними и соединение будут закрыты
-//                    logger.log(Level.INFO,"Client disconnected!");
-//                }
-//            }
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
 
     }
 }

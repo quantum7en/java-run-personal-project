@@ -3,6 +3,8 @@ package program;
 import logic.BusinessLogic;
 import resources.DataBase;
 import server.Server;
+
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,12 +16,11 @@ public class Program {
 
         try {
             Server.start();
-            logger.log(Level.INFO, "after server started");
             DataBase dataBase = DataBase.getDataBaseInstance();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
-        } catch (Exception ignored) {
-            logger.log(Level.WARNING, "WARNING");
+        } catch (IOException ioException) {
+            logger.log(Level.WARNING, "WARNING: ioException in Server");
         }
-        logger.log(Level.INFO, "Server started succesfully!!! <3 ");
+        logger.log(Level.INFO, "Server, DB & logic started succesfully!!! <3 ");
     }
 }
