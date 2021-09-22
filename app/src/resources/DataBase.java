@@ -16,7 +16,7 @@ public class DataBase {
 
     private final InstaAccount [] shops = new InstaAccount[]{new InstaAccount("StyleNanda shop"),
             new InstaAccount("Zara"),
-            new InstaAccount("Forever 21"),
+            new InstaAccount("Forever_21"),
             new InstaAccount("Pazzolini"),
             new InstaAccount("awesome_shoes"),
             new InstaAccount("Lacoste")};
@@ -37,8 +37,12 @@ public class DataBase {
         return dataBaseInstance;
     }
 
-    public InstaAccount searchByInstaAccountName(){
-        InstaAccount instaAccount = null;
-        return instaAccount;
+    public String searchByInstaAccountName(String instaAccountName){
+
+        for(InstaAccount account : instaAccountArrayList){
+            if(account.getInstaAccountName().equals(instaAccountName))
+                return account.getInstaAccountName();
+        }
+        return null;
     }
 }

@@ -10,6 +10,9 @@ public class InstaAccount implements InstaAccountStore{
         this.instaAccountName = instaAccountName;
     }
 
+    public String getInstaAccountName() {
+        return instaAccountName;
+    }
 
     @Override
     public void addToCart(ProductItem productItem){

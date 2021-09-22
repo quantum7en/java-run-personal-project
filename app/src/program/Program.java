@@ -15,8 +15,8 @@ public class Program {
     public static void main(String[] args) {
 
         try {
+            DataBase.getDataBaseInstance();
             Server.start();
-            DataBase dataBase = DataBase.getDataBaseInstance();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (IOException ioException) {
             logger.log(Level.WARNING, "WARNING: ioException in Server");

@@ -1,28 +1,30 @@
 package server;
 
 import com.ibm.jvm.dtfjview.Session;
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import resources.DataBase;
+import store.InstaAccount;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class ServerHandler implements HttpHandler {
-    /**
-     * Handle the given request and generate an appropriate response.
-     * See {@link HttpExchange} for a description of the steps
-     * involved in handling an exchange.
-     *
-     * @param exchange the exchange containing the request from the
-     *                 client and used to send the response
-     * @throws NullPointerException if exchange is <code>null</code>
-     */
+
+    // todo null pointer exception here
 
     private Session serverSession; //если нужно будет фиксировать сессию для сервера
     private static final Logger logger = Logger.getLogger(ServerHandler.class.getCanonicalName());
+
+    private static final String defaultPage = "/";
+    private static final String instaAccountsPage = "/accounts";
+    private static final String accountSearchPage = "/accounts/search?name=awesome_shoes";
+    private static final String searchingInstaAccount = "awesome_shoes";
 
     public ServerHandler(){}
 
@@ -54,7 +56,7 @@ public class ServerHandler implements HttpHandler {
     private String handleGetRequest(HttpExchange httpExchange) throws IOException {
         String value = null;
         String request = httpExchange.getRequestURI().toString();
-        if(request.equals("/accounts/search?name=awesome_shoes")) {
+        if(request.equals(accountSearchPage)) {
             value = httpExchange.
                     getRequestURI()
                     .toString()
@@ -63,7 +65,7 @@ public class ServerHandler implements HttpHandler {
 
             logger.log(Level.INFO, value);
         }
-        else if(request.equals("/accounts")) //todo переделать, чтобы искал другие магазины
+        else if(request.equals(instaAccountsPage)) //todo переделать, чтобы искал другие магазины
             value = "Requested Instagram Account not found. For now you can look for 'awesome_shoes'";
         else
             httpExchange.sendResponseHeaders(404, -1);
@@ -71,24 +73,47 @@ public class ServerHandler implements HttpHandler {
     }
 
     private void handleResponse(HttpExchange httpExchange, String requestParamValue)  throws  IOException {
+        String response = null;
+
+        if(requestParamValue.equals(searchingInstaAccount))
+            response = generateInstaAccountPage(searchingInstaAccount, httpExchange);
+
+
         OutputStream outputStream = httpExchange.getResponseBody();
         StringBuilder htmlBuilder = new StringBuilder();
 
         htmlBuilder.
                 append("<h1>").
-                append("Your request : ")
-                .append(requestParamValue)
+                append("Your request : ").append(requestParamValue)
+                .append(" | Response : ")
+                .append(response)
                 .append("</h1>");
 
         // encode HTML content
-       // String htmlResponse = StringEscapeUtils.escapeHtml4(htmlBuilder.toString());
+       // String htmlResponse = StringEscapeUtils.escapeHtml4(htmlBuilder.toString()); // не тянется либа, но можно скачать всю и положить в проект
 
         String htmlResponse = htmlBuilder.toString();
-        // this line is a must
+
         httpExchange.sendResponseHeaders(200, htmlResponse.length());
 
         outputStream.write(htmlResponse.getBytes());
         outputStream.flush();
         outputStream.close();
+    }
+
+    private String generateInstaAccountPage(String accountSearchPage, HttpExchange httpExchange){
+        String instaAccountName = DataBase.getDataBaseInstance().searchByInstaAccountName(accountSearchPage);
+        logger.log(Level.INFO, "Account name to search : " + instaAccountName);
+
+        if (instaAccountName != null){
+            final Headers headers = httpExchange.getResponseHeaders();
+            headers.set("Content-Type", String.format("application/json,; charset=%s", StandardCharsets.UTF_8));
+            final StringBuilder responseBody = new StringBuilder();
+            responseBody.append("{");
+            responseBody.append(String.format("{\"name\":\"%s\"}", instaAccountName));
+            responseBody.append("}");
+            return responseBody.toString();
+        }
+        return null;
     }
 }
