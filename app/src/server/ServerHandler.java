@@ -5,7 +5,6 @@ import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import resources.DataBase;
-import store.InstaAccount;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -24,7 +23,7 @@ public class ServerHandler implements HttpHandler {
     private static final String defaultPage = "/";
     private static final String instaAccountsPage = "/accounts";
     private static final String accountSearchPage = "/accounts/search?name=awesome_shoes";
-    private static final String searchingInstaAccount = "awesome_shoes";
+    private static final String instaAccountToSearch = "awesome_shoes";
 
     public ServerHandler(){}
 
@@ -75,8 +74,8 @@ public class ServerHandler implements HttpHandler {
     private void handleResponse(HttpExchange httpExchange, String requestParamValue)  throws  IOException {
         String response = null;
 
-        if(requestParamValue.equals(searchingInstaAccount))
-            response = generateInstaAccountPage(searchingInstaAccount, httpExchange);
+        if(requestParamValue.equals(instaAccountToSearch))
+            response = generateInstaAccountPage(instaAccountToSearch, httpExchange);
 
 
         OutputStream outputStream = httpExchange.getResponseBody();

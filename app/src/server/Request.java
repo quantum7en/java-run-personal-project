@@ -9,16 +9,8 @@ public class Request {
         this.instaAccountName = query;
     }
 
-//    public String getInstaAccountName() {
-//        return instaAccountName;
-//    }
-//
-//    private void setInstaAccountName(String instaAccountName) {
-//        this.instaAccountName = instaAccountName;
-//    }
-
     public Request getRequest(HttpExchange exchange){
-        String query = exchange.getRequestURI().toString();
+        String query = exchange.getRequestURI();
 
         return new Request(query);
     }
