@@ -1,9 +1,5 @@
 package logic;
 
-import java.io.*;
-import java.net.Socket;
-import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,10 +7,12 @@ import java.util.logging.Logger;
 public class BusinessLogic {
     private static final Logger logger = Logger.getLogger(BusinessLogic.class.getCanonicalName());
     private static BusinessLogic BusinessLogicInstance;
-    private BusinessLogic(){}
 
-    public static BusinessLogic getBusinessLogicInstance(){
-        if(BusinessLogicInstance == null){
+    private BusinessLogic() {
+    }
+
+    public static BusinessLogic getBusinessLogicInstance() {
+        if (BusinessLogicInstance == null) {
             BusinessLogicInstance = new BusinessLogic() {
             };
             logger.log(Level.INFO, "One and only logic created");
@@ -22,7 +20,7 @@ public class BusinessLogic {
         return BusinessLogicInstance;
     }
 
-    public void startBusinessLogic(){
+    public void startBusinessLogic() {
 
 //        try ( Socket socket = new Socket("127.0.0.1", 8000);
 //             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));

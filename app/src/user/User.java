@@ -6,10 +6,10 @@ import java.net.Socket;
 //todo if we will have more than 1 user, put them in List, identify them by id or email
 
 public class User {
-    private Long id;
-    private String email;
     private final BufferedReader in;
     private final BufferedWriter out;
+    private Long id;
+    private String email;
 
     public User(Socket socket, Long id, String email) throws IOException {
         this.id = id;

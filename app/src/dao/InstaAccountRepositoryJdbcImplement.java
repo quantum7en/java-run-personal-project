@@ -13,10 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class InstaAccountRepositoryJdbcImplement extends AbstractController<ProductItem, ProductItemRepository> {
+    public static final String SqlSelectByAccountName = "SELECT * FROM instaAccountsTable";
     private static final Logger logger = Logger.getLogger(Program.class.getCanonicalName());
     DataSource dataSource;
-
-    public static final String SqlSelectByAccountName = "SELECT * FROM instaAccountsTable";
 
     public InstaAccountRepositoryJdbcImplement(DataSource dataSource) {
         this.dataSource = dataSource;

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Program {
 
-    private static final Logger logger = Logger.getLogger(Program.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger("Program");
 
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class Program {
             Server.start();
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (IOException ioException) {
-            logger.log(Level.WARNING, "WARNING: ioException in Server");
+            logger.warning("WARNING: ioException in Server");
         }
         logger.log(Level.INFO, "Server, DB & logic started succesfully!!! <3 ");
     }

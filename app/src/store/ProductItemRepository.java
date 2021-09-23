@@ -3,14 +3,15 @@ package store;
 //import org.springframework.stereotype.Repository; // todo later
 //import jdk.nashorn.internal.objects.annotations.Getter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 //@Repository
 //@AllArgsConstructor
 public class ProductItemRepository {
 
-//    @Getter
+    //    @Getter
     private List<ProductItem> listOfProductItems;
 
     public ProductItemRepository() {
@@ -21,7 +22,7 @@ public class ProductItemRepository {
     public ProductItemRepository(ArrayList<ProductItem> productItems) {
     }
 
-    public void addProductItemInRepo(ProductItem productItem){
+    public void addProductItemInRepo(ProductItem productItem) {
         listOfProductItems.add(productItem);
     }
 
