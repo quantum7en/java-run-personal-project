@@ -79,9 +79,9 @@ public class ServerHandler implements HttpHandler {
         OutputStream outputStream = httpExchange.getResponseBody();
         StringBuilder htmlBuilder = new StringBuilder();
 
-        htmlBuilder.
-                append("<h1>").
-                append("Your request : ").append(requestParamValue)
+        htmlBuilder
+                .append("<h1>")
+                .append("Your request : ").append(requestParamValue)
                 .append(" | Response : ")
                 .append(response)
                 .append("</h1>");

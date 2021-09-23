@@ -3,6 +3,12 @@ package dao;
 import java.sql.Connection;
 import java.util.List;
 
+/**
+ *
+ * @param <E> <ProductItem> is class that contains information about 1 product item
+ * @param <K> <ProductItemRepository> is class that contains information about repository of product items in Instagram shop account
+ */
+
 public abstract class AbstractController<E, K> {
     //todo adapt this class to class InstaAccountRepositoryJdbcImplement?
     private Connection connection;

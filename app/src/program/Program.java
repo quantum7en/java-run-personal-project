@@ -19,6 +19,8 @@ public class Program {
             BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
         } catch (IOException ioException) {
             logger.warning("WARNING: ioException in Server");
+            logger.warning(ioException.getMessage());
+            ioException.printStackTrace();
         }
         logger.info("Server, DB & logic started succesfully!!! <3 ");
     }

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -39,8 +38,10 @@ public class Server {
 
             httpServerInstance.start();
         } catch (IOException ex) {
-            logger.log(Level.WARNING, "Server creation caught IOException");
-            throw new IOException();
+            logger.warning("Unable to start server");
+            logger.warning(ex.getMessage());
+            ex.printStackTrace();
+            throw new RuntimeException(ex);
         }
 
         logger.info("Server started");
