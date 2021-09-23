@@ -5,7 +5,6 @@ import resources.DataBase;
 import server.Server;
 
 import java.io.IOException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Program {
@@ -21,6 +20,6 @@ public class Program {
         } catch (IOException ioException) {
             logger.warning("WARNING: ioException in Server");
         }
-        logger.log(Level.INFO, "Server, DB & logic started succesfully!!! <3 ");
+        logger.info("Server, DB & logic started succesfully!!! <3 ");
     }
 }

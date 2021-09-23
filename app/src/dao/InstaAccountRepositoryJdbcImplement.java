@@ -1,6 +1,5 @@
 package dao;
 
-import program.Program;
 import store.ProductItem;
 import store.ProductItemRepository;
 
@@ -9,12 +8,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class InstaAccountRepositoryJdbcImplement extends AbstractController<ProductItem, ProductItemRepository> {
-    public static final String SqlSelectByAccountName = "SELECT * FROM instaAccountsTable";
-    private static final Logger logger = Logger.getLogger(Program.class.getCanonicalName());
+    public static final String SqlSelectByAccountName = "SELECT *"; //instaAccountsTable
+    private static final Logger logger = Logger.getLogger("InstaAccountRepositoryJdbcImplement");
     DataSource dataSource;
 
     public InstaAccountRepositoryJdbcImplement(DataSource dataSource) {
@@ -26,7 +24,7 @@ public class InstaAccountRepositoryJdbcImplement extends AbstractController<Prod
                 Connection connection = dataSource.getConnection();
                 PreparedStatement statemenet = connection.prepareStatement(SqlSelectByAccountName)
         ) {
-            logger.log(Level.INFO, "SQL connection and query");
+            logger.info("SQL connection and query");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

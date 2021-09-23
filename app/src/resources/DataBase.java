@@ -1,16 +1,14 @@
 package resources;
 
-import logic.BusinessLogic;
 import store.InstaAccount;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DataBase {
-    private static final Logger logger = Logger.getLogger(BusinessLogic.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger("DataBase");
     private static DataBase dataBaseInstance;
     private final List<InstaAccount> instaAccountArrayList = new ArrayList<>();
 
@@ -22,7 +20,7 @@ public class DataBase {
             new InstaAccount("Lacoste")};
 
     public DataBase() {
-        logger.log(Level.INFO, "filling Database...");
+        logger.info("filling Database...");
         fillInstaAccountArrayList();
     }
 

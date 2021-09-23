@@ -1,11 +1,10 @@
 package logic;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 // todo maybe make this class Interface
 public class BusinessLogic {
-    private static final Logger logger = Logger.getLogger(BusinessLogic.class.getCanonicalName());
+    private static final Logger logger = Logger.getLogger("BusinessLogic");
     private static BusinessLogic BusinessLogicInstance;
 
     private BusinessLogic() {
@@ -15,7 +14,7 @@ public class BusinessLogic {
         if (BusinessLogicInstance == null) {
             BusinessLogicInstance = new BusinessLogic() {
             };
-            logger.log(Level.INFO, "One and only logic created");
+            logger.info("One and only logic created");
         }
         return BusinessLogicInstance;
     }
@@ -25,7 +24,7 @@ public class BusinessLogic {
 //        try ( Socket socket = new Socket("127.0.0.1", 8000);
 //             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 //             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()))){
-//            logger.log(Level.INFO, "Connected to server");
+//            logger.info( "Connected to server");
 //            String request = "awesome_shoes";
 //            writer.write(request);
 //            writer.newLine();
@@ -35,6 +34,6 @@ public class BusinessLogic {
 //        }
 
 
-        logger.log(Level.INFO, "Business logic started");
+        logger.info("Business logic started");
     }
 }

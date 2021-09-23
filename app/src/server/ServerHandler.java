@@ -8,7 +8,6 @@ import resources.DataBase;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -35,7 +34,7 @@ public class ServerHandler implements HttpHandler {
         try {
             if ("GET".equals(httpExchange.getRequestMethod())) {
                 requestParamValue = handleGetRequest(httpExchange);
-                logger.log(Level.INFO, requestParamValue);
+                logger.info(requestParamValue);
             } else if ("POST".equals(httpExchange)) {
                 requestParamValue = handlePostRequest(httpExchange);
             } else
@@ -48,7 +47,7 @@ public class ServerHandler implements HttpHandler {
 
     private String handlePostRequest(HttpExchange httpExchange) {
         String messageToPost = null;
-        logger.log(Level.INFO, "method post");
+        logger.info("method post");
         return messageToPost;
     }
 
@@ -62,7 +61,7 @@ public class ServerHandler implements HttpHandler {
                     .split("\\?")[1]
                     .split("=")[1];
 
-            logger.log(Level.INFO, value);
+            logger.info(value);
         } else if (request.equals(instaAccountsPage)) //todo переделать, чтобы искал другие магазины
             value = "Requested Instagram Account not found. For now you can look for 'awesome_shoes'";
         else
@@ -101,7 +100,7 @@ public class ServerHandler implements HttpHandler {
 
     private String generateInstaAccountPage(String accountSearchPage, HttpExchange httpExchange) {
         String instaAccountName = DataBase.getDataBaseInstance().searchByInstaAccountName(accountSearchPage);
-        logger.log(Level.INFO, "Account name to search : " + instaAccountName);
+        logger.info("Account name to search : " + instaAccountName);
 
         if (instaAccountName != null) {
             final Headers headers = httpExchange.getResponseHeaders();

@@ -1,12 +1,12 @@
 package store;
 
-public class InstaAccount implements InstaAccountStore{
+public class InstaAccount implements InstaAccountStore {
     // private List<ProductItem> listOfProductItems;
 
     private String instaAccountName;
     private ProductItemRepository productItemRepository;
 
-    public InstaAccount(String instaAccountName){
+    public InstaAccount(String instaAccountName) {
         this.instaAccountName = instaAccountName;
     }
 
@@ -15,7 +15,7 @@ public class InstaAccount implements InstaAccountStore{
     }
 
     @Override
-    public void addToCart(ProductItem productItem){
+    public void addToCart(ProductItem productItem) {
         productItemRepository.addProductItemInRepo(productItem);
     }
 }
