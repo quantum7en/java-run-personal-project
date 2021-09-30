@@ -1,6 +1,5 @@
 package program;
 
-import logic.BusinessLogic;
 import resources.DataBase;
 import server.Server;
 
@@ -9,19 +8,11 @@ import java.util.logging.Logger;
 
 public class Program {
 
-    private static final Logger logger = Logger.getLogger("Program");
+    private static final Logger logger = Logger.getLogger(Program.class.getName());
 
-    public static void main(String[] args) {
-
-        try {
-            DataBase.getDataBaseInstance();
-            Server.start();
-            BusinessLogic.getBusinessLogicInstance().startBusinessLogic();
-        } catch (IOException ioException) {
-            logger.warning("WARNING: ioException in Server");
-            logger.warning(ioException.getMessage());
-            ioException.printStackTrace();
-        }
-        logger.info("Server, DB & logic started succesfully!!! <3 ");
+    public static void main(String[] args) throws IOException {
+        DataBase.start();
+        Server.start();
+        logger.info("Server, DB & logic started successfully!!! <3 ");
     }
 }

@@ -1,21 +1,16 @@
 package user;
 
-import java.io.*;
 import java.net.Socket;
 
 //todo if we will have more than 1 user, put them in List, identify them by id or email
 
 public class User {
-    private final BufferedReader in;
-    private final BufferedWriter out;
     private Long id;
     private String email;
 
-    public User(Socket socket, Long id, String email) throws IOException {
+    public User(Socket socket, Long id, String email) {
         this.id = id;
         this.email = email;
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
     }
 
     public Long getId() {
