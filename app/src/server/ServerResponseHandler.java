@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public abstract class ServerResponseHandler {
     private static final Logger logger = Logger.getLogger(HttpHandler.class.getName());
 
-    protected void handleResponse(HttpExchange httpExchange, String requestParamValue, String response) throws IOException {
+    public void handleResponse(HttpExchange httpExchange, String requestParamValue, String response) throws IOException {
 
         OutputStream outputStream = httpExchange.getResponseBody();
         StringBuilder htmlBuilder = new StringBuilder();
