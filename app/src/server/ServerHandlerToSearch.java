@@ -46,9 +46,7 @@ public class ServerHandlerToSearch extends ServerResponseHandler implements Http
 
     private String handleGetRequest(HttpExchange httpExchange) throws IOException {
         String value = httpExchange.
-                getRequestURI()
-                .toString()
-                .split("\\?")[1]
+                getRequestURI().getQuery()
                 .split("=")[1];
 
         logger.info(value);

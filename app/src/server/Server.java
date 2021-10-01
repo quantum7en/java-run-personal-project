@@ -27,7 +27,7 @@ public class Server {
         logger.info("Executor created");
 
         httpServerInstance.createContext("/accounts", serverHandlerToShowAccounts);
-        httpServerInstance.createContext("/accounts/search?name=awesome_shoes", serverHandlerToSearch);
+        httpServerInstance.createContext("/accounts/search", serverHandlerToSearch);
 
         httpServerInstance.start();
         logger.info("Server started");
