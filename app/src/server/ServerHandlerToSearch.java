@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 
-public class ServerHandlerToSearch extends ServerResponseHandler implements HttpHandler {
+public class ServerHandlerToSearch extends ServerHandler implements HttpHandler {
 
     private static final Logger logger = Logger.getLogger(HttpHandler.class.getName());
     private static final String instaAccountToSearch = "awesome_shoes";
@@ -36,12 +36,6 @@ public class ServerHandlerToSearch extends ServerResponseHandler implements Http
         } catch (IOException ex) {
             throw new IOException();
         }
-    }
-
-    private String handlePostRequest(HttpExchange httpExchange) {
-        String messageToPost = null;
-        logger.info("method post");
-        return messageToPost;
     }
 
     private String handleGetRequest(HttpExchange httpExchange) throws IOException {

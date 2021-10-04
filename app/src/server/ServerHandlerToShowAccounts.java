@@ -4,11 +4,10 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.logging.Logger;
 
 
-public class ServerHandlerToShowAccounts extends ServerResponseHandler implements HttpHandler {
+public class ServerHandlerToShowAccounts extends ServerHandler implements HttpHandler {
 
     private static final Logger logger = Logger.getLogger(HttpHandler.class.getName());
 
@@ -31,12 +30,6 @@ public class ServerHandlerToShowAccounts extends ServerResponseHandler implement
         } catch (IOException ex) {
             throw new IOException();
         }
-    }
-
-    private String handlePostRequest(HttpExchange httpExchange) {
-        String messageToPost = null;
-        logger.info("method post");
-        return messageToPost;
     }
 
     private String handleGetRequest() throws IOException {

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.Logger;
 
-public abstract class ServerResponseHandler {
+public abstract class ServerHandler {
     private static final Logger logger = Logger.getLogger(HttpHandler.class.getName());
 
     public void handleResponse(HttpExchange httpExchange, String requestParamValue, String response) throws IOException {
@@ -29,6 +29,12 @@ public abstract class ServerResponseHandler {
         outputStream.write(htmlResponse.getBytes());
         outputStream.flush();
         outputStream.close();
+    }
+
+    public String handlePostRequest(HttpExchange httpExchange) {
+        String messageToPost = null;
+        logger.info("method post");
+        return messageToPost;
     }
 
 }
