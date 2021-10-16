@@ -1,12 +1,13 @@
 package tests;
 
-import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 
-public class ServerTest extends TestCase {
+public class ServerTest{
 
-    public void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp(){
+
     }
 
     @Test
